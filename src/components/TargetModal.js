@@ -2,7 +2,7 @@ import React from "react";
 import useModal from "./UseModal";
 import Modal from "./Modal";
 
-export default function TargetModal() {
+export default function TargetModal({propHandleChange}) {
   const {
     isShowing: isTargetFormShowed,
     toggle: toggleTargetForm
@@ -23,7 +23,7 @@ export default function TargetModal() {
         >
           <form>
             <div className="form-group">
-                <input type="text" pattern="[0-9]*" inputmode="numeric" />            
+                <input type="text" pattern="[0-9]*" inputMode="numeric" onChange={propHandleChange} />            
             </div>
             
             <div className="form-group">

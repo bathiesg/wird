@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import React, { useState, useEffect } from 'react'; 
 import TargetModal from "./TargetModal";
 
 export default function Viewer() {
@@ -19,12 +19,21 @@ export default function Viewer() {
         setIsDisabled(false);
     }
 
+    const handleChange = (e) => {
+        setTarget(e.target.value)
+    };
+
+    useEffect(() => {
+    console.log(target);
+    }, [target])
+
+
     return(
         <>
         <h3>Wird</h3>
         <div className="viewer">{counter}</div>
         <button onClick={resetCounter}>reset</button> 
-        <TargetModal />
+        <TargetModal propHandleChange={handleChange}/>
         <button disabled={isDisabled} onClick={increaseCounter}>start</button>
         </>
     )
