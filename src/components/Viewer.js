@@ -1,4 +1,5 @@
 import React, { useState } from 'react'; 
+import TargetModal from "./TargetModal";
 
 export default function Viewer() {
     const [target, setTarget] = useState(10);
@@ -22,7 +23,8 @@ export default function Viewer() {
         <>
         <h3>Wird</h3>
         <div className="viewer">{counter}</div>
-        <button onClick={resetCounter}>reset</button>
+        <button onClick={resetCounter}>reset</button> 
+        <TargetModal />
         <button disabled={isDisabled} onClick={increaseCounter}>start</button>
         </>
     )
